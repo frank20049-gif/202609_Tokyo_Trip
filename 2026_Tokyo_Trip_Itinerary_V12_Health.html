@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 東京行程表</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'LiHei Pro', '微軟正黑體', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .summary-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .summary-card h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        @media (min-width: 600px) {
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .day-card {
+            background: var(--card-bg);
+            border-left: 5px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .day-header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .day-header h3 {
+            margin: 0;
+            color: var(--secondary-color);
+        }
+        .date-badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .timeline {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .timeline li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .timeline li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+        .time {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-right: 10px;
+            display: inline-block;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+            background: #f0f4f8;
+            padding: 10px;
+            border-radius: 5px;
+            display: block;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e8f4fd;
+            color: var(--accent-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>2026 東京自由行行程表</h1>
+        <p>旅行日期：9月6日 (日) - 9月13日 (日)</p>
+    </header>
+    
+    <div class="container">
+        <!-- 摘要資訊 -->
+        <div class="summary-card">
+            <h2>預訂資訊總覽</h2>
+            <div class="info-grid">
+                <div>
+                    <h3>✈️ 航班資訊 (總計: 29,665円)</h3>
+                    <p><strong>去程：</strong> 9/6 NH1076 福岡(FUK) 09:25 ➔ 羽田(HND) 11:10</p>
+                    <p><strong>回程：</strong> 9/13 NH273 羽田(HND) 19:35 ➔ 福岡(FUK) 21:30</p>
+                </div>
+                <div>
+                    <h3>🏨 住宿資訊</h3>
+                    <p><strong>飯店：</strong> APA新宿御苑前 (APA Hotel Shinjuku Gyoenmae)</p>
+                    <p><strong>入住：</strong> 9/6 - 9/13 (共7晚)</p>
+                    <p><strong>費用：</strong> 111,500円</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 每日行程 -->
+        <div class="day-card">
+            <div class="day-header">
+                <span class="date-badge">9/6 (日)</span>
+                <h3>出發 / 東京探索</h3>
+            </div>
+            <ul class="timeline">
+                <li><span class="time">11:10</span> 抵達東京羽田，前往飯店 APA新宿御苑前 辦理入住 / 寄放行李。</li>
+                <li><span class="time">午餐</span> <strong>新宿アカシア 本店</strong> (高麗菜捲燉肉洋食)</li>
+                <li>
+                    <span class="time">10:00 - 18:00</span> 參加 Pokémon GO 全球活動：「超級壓軸（MEGA FINALE）」
+                    <div class="note">活動為期兩天(9/5-9/6)，抵達東京後即可參與市區內的連線盛宴。</div>
+                </li>
+                <li>
+                    <span class="time">傍晚</span> 周邊景點：<strong>澀谷十字路口 / 澀谷天空 (SHIBUYA SKY)</strong>
+                    <div class="note">在前往晚餐的途中順遊。由高處往下運用中長焦段，能營造出十字路口龐大人潮的極致視覺壓縮感，手持即可輕鬆出圖。</div>
+                </li>
+                <li><span class="time">晚餐</span> <strong>BOILING POINT 渋谷店</strong> (台式熱湯鍋物)</li>
+            </ul>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span class="date-badge">9/7 (一)</span>
+                <h3>健康檢查 / 頂級肉品補給</h3>
+            </div>
+            <ul class="timeline">
+                <li><span class="time">早餐</span> 配合檢查需空腹，不安排餐點。</li>
+                <li>
+                    <span class="time">09:00</span> 人間ドック健康檢查
+                    <div class="note">
+                        <strong>地點：</strong> メディカルスクエア赤坂 (Medical Square Akasaka)<br>
+                        <strong>受診者：</strong> HUANG TENG YI 様<br>
+                        <strong>費用：</strong> 36,300円 (含稅) ※因取消胃部檢查，減免 11,000円<br>
+                        <strong>提醒：</strong> 請攜帶事前郵寄的問卷與檢查套件。
+                    </div>
+                </li>
+                <li><span class="time">午餐</span> <strong>バンダラ ランカ</strong> (四谷三丁目 / 斯里蘭卡香料自助餐)</li>
+                <li>
+                    <span class="time">傍晚</span> 周邊景點：<strong>惠比壽花園廣場 (Yebisu Garden Place)</strong>
+                    <div class="note">位於晚餐牛排館附近。廣場的長廊與歐式紅磚建築，非常適合利用望遠鏡頭的壓縮效果，讓背景與人物緊密貼合，幾何線條明確。</div>
+                </li>
+                <li><span class="time">晚餐</span> <strong>ピーター・ルーガー・ステーキハウス東京</strong> (惠比壽 / 乾式熟成牛排)</li>
+            </ul>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span class="date-badge">9/8 (二)</span>
+                <h3>等等力溪谷自然散策</h3>
+            </div>
+            <ul class="timeline">
+                <li><span class="time">早餐</span> <strong>東京豆漿生活</strong> (五反田 / 現磨豆漿與燒餅)</li>
+                <li>
+                    <span class="time">09:00 - 11:30</span> 等等力溪谷公園 (Todoroki Valley)
+                    <div class="note">
+                        <strong>交通：</strong> 搭乘東急大井町線至「等等力站」，步行約 3 分鐘即可抵達入口。<br>
+                        <strong>特色：</strong> 東京 23 區內唯一溪谷，2026年3月已重新全面開放。沿著谷澤川漫步，可拍攝紅色的「高爾夫橋」、不動瀑布與日式庭園。<br>
+                        <strong>提醒：</strong> 溪谷步道部分路段可能濕滑，建議穿著舒適防滑的鞋子前往。
+                    </div>
+                </li>
+                <li><span class="time">午餐</span> <strong>神乃珈琲 目黒店</strong> (目黑 / 質感空間與直火烘焙咖啡)</li>
+                <li>
+                    <span class="time">18:45</span> 晚餐：<strong>The Burn</strong>
+                    <div class="note">
+                        <strong>預約確認：</strong> 3 名。<br>
+                        <strong>位置：</strong> 青山一丁目站步行約 1 分鐘（87m）。<br>
+                        <strong>特色：</strong> 紐約風格的美式炭烤料理。厚切牛排能提供極高密度的優質蛋白質，是絕佳的修復補給餐。
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span class="date-badge">9/9 (三)</span>
+                <h3>寶可夢實境解謎 / 法式甜點</h3>
+            </div>
+            <ul class="timeline">
+                <li><span class="time">早餐</span> <strong>wanna manna 飯田橋サクラテラス店</strong> (飯田橋 / 台式飯糰)</li>
+                <li>
+                    <span class="time">全日</span> 「傳說的寶可夢相遇 Legend Research in 日本橋＆八重洲」活動首日
+                    <div class="note">
+                        <strong>主辦：</strong> 三井不動產、寶可夢公司、JR東海<br>
+                        <strong>內容：</strong> 免費參觀的城市雕像展 & 付費參加的實境解謎遊戲。<br>
+                        可前往日本橋、八重洲一帶體驗。
+                    </div>
+                </li>
+                <li><span class="time">午餐</span> <strong>ナイルレストラン</strong> (銀座 / 經典 Murghi Lunch)</li>
+                <li><span class="time">午茶</span> <strong>オー・メルベイユ・ドゥ・フレッド</strong> (神樂坂 / 華麗法式蛋白霜甜點)</li>
+                <li>
+                    <span class="time">下午</span> 周邊景點：<strong>赤城神社</strong>
+                    <div class="note">吃完甜點後步行可達。結合現代建築大師隈研吾設計的玻璃木造神社，建築質感與傳統神社交錯，極具現代感。</div>
+                </li>
+                <li><span class="time">晚餐</span> 自由安排 (探索市區或居酒屋)</li>
+            </ul>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span class="date-badge">9/10 (四)</span>
+                <h3>高能量早午餐 / 香料探索</h3>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <span class="time">08:00 - 09:30</span> 早餐：<strong>Eggslut 新宿南方之星店</strong>
+                    <div class="note">
+                        <strong>推薦：</strong> Route 20 三明治。<br>
+                        巨量優質蛋白質，完美支援平日的肌力訓練與修復。
+                    </div>
+                </li>
+                <li><span class="time">午餐</span> <strong>スパイスカレー食堂 四ツ谷店</strong> (四谷 / 無添加斯里蘭卡咖哩)</li>
+                <li><span class="time">午茶</span> <strong>四ツ谷一餅堂</strong> (四谷 / 炭烤胡椒餅與台灣茶)</li>
+                <li>
+                    <span class="time">下午</span> 周邊景點：<strong>須賀神社階梯</strong>
+                    <div class="note">距離一餅堂步行約 10 分鐘。著名的紅色階梯與市景交錯。站在高處往下拍，運用望遠鏡頭能輕鬆將紅色扶手與遠方街景壓縮，呈現電影般的立體層次。</div>
+                </li>
+                <li><span class="time">晚餐</span> 自由安排</li>
+            </ul>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span class="date-badge">9/11 (五)</span>
+                <h3>女王早餐 / 職人烘焙</h3>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <span class="time">09:00 - 10:30</span> 早餐：<strong>Sarabeth's LUMINE 新宿店</strong>
+                    <div class="note">
+                        <strong>推薦：</strong> 經典班尼迪克蛋或法式吐司。<br>
+                        兼具高品質蛋白質與碳水，為一天的行程帶來強大飽足感。
+                    </div>
+                </li>
+                <li><span class="time">午餐</span> <strong>No.4</strong> (市谷 / 職人窯烤披薩與法式吐司)</li>
+                <li><span class="time">下午</span> 採買：<strong>パンのペリカン</strong> (田原町 / 預先購入明日早餐用吐司)</li>
+                <li>
+                    <span class="time">傍晚</span> 周邊景點：<strong>淺草寺與仲見世通</strong>
+                    <div class="note">買完吐司順遊。利用中長焦段拍攝，能大幅度壓縮人群與雷門燈籠的距離感，無需後製即可呈現飽滿的下町色彩。</div>
+                </li>
+                <li><span class="time">晚餐</span> 自由安排</li>
+            </ul>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span class="date-badge">9/12 (六)</span>
+                <h3>豐洲藝術體驗 / 調布煙火大會</h3>
+            </div>
+            <ul class="timeline">
+                <li><span class="time">07:30</span> 早餐：享用昨日採買的 Pelican 純粹碳水吐司</li>
+                <li>
+                    <span class="time">09:00 - 11:30</span> <strong>teamLab Planets TOKYO (豐洲)</strong>
+                    <div class="note">
+                        <strong>預約時段：</strong> 已確認為 09:00 - 09:30 入場。<br>
+                        <strong>建議：</strong> 體驗時間約需 2 至 2.5 小時，結束後可於豐洲周邊或市區享用午餐，下午再從容前往調布。
+                    </div>
+                </li>
+                <li><span class="time">午餐</span> <strong>タイごはん 泉州屋台</strong> (芝公園 / 道地泰式街頭打拋豬)</li>
+                <li>
+                    <span class="time">下午</span> 周邊景點：<strong>增上寺與東京鐵塔</strong>
+                    <div class="note">就在泉州屋台旁。望遠焦段能將傳統寺廟建築與現代的東京鐵塔鋼骨結構完美壓縮在同一個平面，是張力極強的風景攝影組合。</div>
+                </li>
+                <li>
+                    <span class="time">18:00 - 19:15</span> <strong>第41屆調布煙火大會</strong>
+                    <div class="note">
+                        <strong>避開人潮之免費觀賞區推薦：</strong><br>
+                        <span class="tag">① 稻田堤方向</span> (多摩川河川敷・上流側)：空間大、壓迫感低。適合想輕鬆散步的人。<br>
+                        <span class="tag">② 是政橋方向</span> (多摩川河川敷・下流側)：適合野餐，但距離稍遠，低空煙火可能被遮擋。<br>
+                        <span class="tag">③ 京王多摩川站周邊</span> (住宅區外圍道路)：最不擠，臨時想看的好去處，僅能觀賞高空煙火。
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span class="date-badge">9/13 (日)</span>
+                <h3>未來城市探索 / 賦歸</h3>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <span class="time">早上</span> 飯店退房
+                    <div class="note">建議帶著行李前往「高輪 Gateway 站」或「品川站」寄放。</div>
+                </li>
+                <li>
+                    <span class="time">上午 - 下午</span> <strong>TAKANAWA GATEWAY CITY</strong>
+                    <div class="note">
+                        <strong>位置：</strong> 高輪 Gateway 站出站即達。<br>
+                        <strong>特色：</strong> JR 東日本主導的新型城市，2026年3月已全區開幕。體驗未來城市設計、文化樞紐與全新商業設施。
+                    </div>
+                </li>
+                <li>
+                    <span class="time">19:35 - 21:30</span> 搭乘 NH273 班機，由東京羽田返回福岡
+                    <div class="note">自品川站領取行李後，搭乘京急線直達羽田機場（車程約 15-20 分鐘），動線極為順暢。</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
